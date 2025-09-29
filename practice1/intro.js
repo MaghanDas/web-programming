@@ -24,6 +24,53 @@ let y = 10
 // console.log(greet("ALice"))
 
 // Arrow Functions 
-const greet = (name, das) => `Hello ${name} ${das}`;
-console.log(greet("ALice", "das"))
+// const greet = (name, das) => `Hello ${name} ${das}`;
+const sum = (x,y)=> `Addition is ${x+y+6}`
+// console.log(greet("ALice", "das"))
+// console.log(sum(1,2))
+const hello = ()=>`hello world`
+// console.log(hello())
+
+
+// if (age > 18){
+//     console.log("you can vote! ");
+// } else {
+//     console.log("too yoooung");
+// }
+
+
+// let psswd = prompt("enter password")
+
+// if(psswd === "das") {
+//     alert("correct")
+// } else {
+//     alert("not correct")
+// }
+
+
+// loops
+// for (let index = 0; index < 5; index++) {
+//     console.log("Iteration: ", index)
+// }
+
+// Arrays
+let items = ["Apple", "Banana", "Orange"]
+// for (let fruits of items) {
+//     console.log(fruits)
+// }
+// console.log(items[1])
+
+// 👉 Methods: .push(), .pop(), .map(), .filter(), .reduce()
+
+let user = {
+    name: "Alice",
+    age: 25,
+    isAdmin: true 
+};
+// console.log(user.isAdmin)
+
+// 11. DOM Basics
+// DOM = Document Object Model = tree structure of webpage.
+// JS can manipulate it to change content dynamically.
+// document.getElementById("demo").innerText = "Hello JS!";
 
