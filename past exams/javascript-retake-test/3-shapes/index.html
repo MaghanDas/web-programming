@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shapes</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Shapes</h1>
+
+    <h2>Display</h2>
+    <canvas width="400" height="400"></canvas>
+    
+    <div id="controls">
+      <h2>Controls</h2>
+      Shape: <select>
+        <option value="rect">Rectangle</option>
+        <option value="circ">Circle</option>
+        <option value="line">Line segment</option>
+    </select>
+        <div id="rect">
+            <h3>Rectangle data</h3>
+            Top-left X: <input type="number" id="rect-x" step="1" min="0" max="400" value="100"> <br>
+            Top-left Y: <input type="number" id="rect-y" step="1" min="0" max="400" value="100"> <br>
+            Width:   <input type="number" id="rect-w" step="1" min="0" max="400" value="100"> <br>
+            Height:  <input type="number" id="rect-h" step="1" min="0" max="400" value="100"> <br>
+        </div>
+        <div id="circ" hidden>
+            <h3>Circle data</h3>
+            Center X: <input type="number" id="circ-x" step="1" min="0" max="400" value="100"> <br>
+            Center Y: <input type="number" id="circ-y" step="1" min="0" max="400" value="100"> <br>
+            Radius:   <input type="number" id="circ-r" step="1" min="0" max="400" value="30"> <br>
+        </div>
+        <div id="line" hidden>
+            <h3>Segment data</h3>
+            Point A: <input type="number" id="line-ax" step="1" min="0" max="400" value="100"> <input type="number" id="line-ay" step="1" min="0" max="400" value="100"> <br>
+            Point B: <input type="number" id="line-bx" step="1" min="0" max="400" value="200"> <input type="number" id="line-by" step="1" min="0" max="400" value="150"><br>
+        </div>
+        <button id="draw">Draw</button>
+        <h3>Zoom</h3>
+        <input type="range" step="0.01" min="1" max="10" value="1"><br>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

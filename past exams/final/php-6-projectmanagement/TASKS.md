@@ -1,0 +1,7 @@
+- [ ] a. 2 pts
+- [ ] b. 2 pts
+- [ ] c. 3 pts
+- [ ] d. 1 pts
+- [ ] e. 2 pts
+- [ ] f. 2 pts
+- [ ] g. 2 pts
