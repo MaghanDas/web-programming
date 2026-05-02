@@ -1,0 +1,44 @@
+[
+    {
+        "0": "DAS MAGHAN",
+        "1": "Veres Palne utca 12",
+        "2": "Books",
+        "products": [
+            "PHP Basics",
+            "Web Development"
+        ]
+    },
+    {
+        "0": "DAS MAGHAN",
+        "1": "Veres Palne utca 12",
+        "2": "Electronics",
+        "products": [
+            "Pendrive",
+            "Keyboard"
+        ]
+    },
+    {
+        "0": "DAS MAGHAN",
+        "1": "Veres Palne utca 12",
+        "2": "Electronics",
+        "products": [
+            "Pendrive"
+        ]
+    },
+    {
+        "0": "DAS MAGHAN",
+        "1": "Veres Palne utca 12",
+        "2": "Electronics",
+        "products": [
+            "Pendrive"
+        ]
+    },
+    {
+        "0": "DAS MAGHAN",
+        "1": "Veres Palne utca 12",
+        "2": "Electronics",
+        "": [
+            "Keyboard"
+        ]
+    }
+]

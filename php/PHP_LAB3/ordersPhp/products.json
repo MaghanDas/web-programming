@@ -1,0 +1,11 @@
+
+{
+"Electronics": [
+{"id": 1, "name": "Pendrive", "price": 10},
+{"id": 2, "name": "Keyboard", "price": 25}
+],
+"Books": [
+{"id": 3, "name": "PHP Basics", "price": 15},
+{"id": 4, "name": "Web Development", "price": 20}
+]
+}

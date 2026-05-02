@@ -1,0 +1,54 @@
+
+// _SESSION
+session_start();
+$_SESSION['key'] = 'value';
+Check if session data exists
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+Read session data
+$_SESSION['cart'];
+add to session 
+$_SESSION['cart'][] = 'apple';
+Modify session data
+$_SESSION['cart'][0] = 'banana';
+Remove from session
+unset($_SESSION['cart'][1]);
+
+_SESSION['fridge'] = ['butter', 'milk'];
+$recipe = ['butter', 'milk', 'flour'];
+$missing = array_diff($recipe, $_SESSION['fridge']);
+array_diff() finds ingredients not in fridge
+
+
+pregmatch
+Meaning	Regex
+digit	\d
+number of times	{min,max}
+optional	?
+start	^
+end	$
+^\+?\d[\d\s]{7,15}$
+any digit	\d
+any letter	[a-zA-Z]
+whitespace	\s
+anything	.
+one or more	+
+zero or more	*
+optional	?
+OR	`
+range	{n,m}
+Email (simple, safe)
+preg_match('/^[^@\s]+@[^@\s]+\.[^@\s]+$/', $email)
+
+Phone number (flexible)
+preg_match('/^\+?[0-9\s\-()]{7,20}$/', $phone)
+
+Only letters
+preg_match('/^[a-zA-Z]+$/', $name)
+
+Number only
+preg_match('/^\d+$/', $num)
+
+Contains a word (IMPORTANT
+preg_match('/apple/i', $text)

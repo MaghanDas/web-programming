@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Maghan Das",
+        "address": "Veres Palne utca 12",
+        "category": "Electronics",
+        "products": [
+            "Pendrive",
+            "Keyboard"
+        ]
+    },
+    {
+        "name": " dsjas",
+        "address": "sadfjk",
+        "category": "Books",
+        "products": [
+            "Web Development"
+        ]
+    },
+    {
+        "name": "DAS MAGHAN",
+        "address": "Veres Palne utca 12",
+        "category": "Electronics",
+        "products": [
+            "Pendrive"
+        ]
+    }
+]
