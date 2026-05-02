@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Budapest Metro — Starter</title>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <!-- Menu -->
+    <section id="menu" class="screen">
+      <h1>Metro Development — Start</h1>
+      <label>
+        Player name
+        <input id="playerName" type="text" placeholder="Your name" />
+      </label>
+      <div class="menu-buttons">
+        <button id="startBtn">Start</button>
+        <button id="descBtn">Game rules</button>
+      </div>
+      <div class="scores-list" id="scoresList"></div>
+      <div class="heart-row">
+        <span id="blueHeart" class="heart" role="img" aria-label="blue-heart">💙</span>
+      </div>
+    </section>
+
+    <!-- Description -->
+    <section id="description" class="screen hidden">
+      <button id="backFromDesc">← Back</button>
+      <h2>Game Description</h2>
+      <p>Rules / controls summary (short): draw a card, optionally build one segment from an endpoint to a matching-type station (or Joker). Segments must be straight (H, V or 45°), can't pass through other stations, can't cross existing segments in open areas, no parallel segments, no loops.</p>
+    </section>
+
+    <!-- Game screen -->
+    <section id="game" class="screen hidden">
+      <header class="game-header">
+        <div>
+          <strong>Player:</strong> <span id="playerDisplay">—</span>
+        </div>
+        <div>
+          <strong>Timer:</strong> <span id="timer">00:00</span>
+        </div>
+        <div>
+          <strong>Line:</strong> <span id="currentLineName">—</span>
+          <span id="currentLineColor" class="swatch"></span>
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="drawCardBtn">Draw Card</button>
+        <button id="nextRoundBtn" title="Force end round (debug)">Next Round</button>
+        <div class="cardDisplay">Card: <span id="cardDisplay">—</span></div>
+      </div>
+
+      <div class="board-wrap">
+        <!-- SVG board -->
+        <svg id="board" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+
+      <footer class="game-footer">
+        <div>Round: <span id="roundIndex">0</span> / 4</div>
+        <div>Cards this round: <span id="cardsThisRound">0</span></div>
+        <div>Round score (last): <span id="lastRoundScore">0</span></div>
+      </footer>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

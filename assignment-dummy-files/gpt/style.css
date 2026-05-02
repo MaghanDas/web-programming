@@ -1,0 +1,40 @@
+:root{
+  --bg:#f6f7f8;
+  --accent:#1f78ff;
+  --grid:#e6e6e6;
+  --station:#111;
+  --station-bg:#000;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+body{margin:0;background:var(--bg);color:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;}
+main{width:1000px;max-width:96vw;padding:18px;}
+.screen{background:#fff;border-radius:10px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.08);}
+.hidden{display:none;}
+h1,h2{margin:6px 0 12px;}
+label{display:block;margin-bottom:10px;font-weight:600;}
+input[type="text"]{padding:8px;border-radius:6px;border:1px solid #cfcfcf;width:220px;margin-left:10px;}
+.menu-buttons{margin:12px 0;}
+.menu-buttons button{margin-right:10px;padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;}
+.menu-buttons button:nth-child(2){background:#666;}
+.scores-list{margin-top:12px;font-size:14px;color:#444;}
+.heart-row{margin-top:10px;}
+.heart{cursor:pointer;font-size:28px;user-select:none;display:inline-block;}
+
+.game-header{display:flex;gap:24px;align-items:center;margin-bottom:14px;}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid #ccc;margin-left:8px;vertical-align:middle;}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:12px;}
+.controls button{padding:8px 12px;border-radius:8px;border:0;background:#0b7a4d;color:#fff;cursor:pointer;}
+.controls button#nextRoundBtn{background:#b93;}
+.cardDisplay{font-weight:600;}
+.board-wrap{background:
+  linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
+  linear-gradient(0deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  padding:8px;border-radius:8px;border:1px solid #eee;
+}
+svg#board{width:100%;height:calc( (1000px * 0.8) );background:transparent;border-radius:6px;display:block;}
+.station {cursor:pointer;}
+.station text{font-size:12px;fill:#fff;font-weight:700;}
+.segment {stroke-width:6;stroke-linecap:round;}
+.footer{margin-top:10px;}
+.game-footer{display:flex;gap:16px;margin-top:12px;align-items:center;}
