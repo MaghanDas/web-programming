@@ -1,0 +1,10 @@
+- [X] a. 2 pts
+- [X] b. 1 pts
+- [ ] d. 2 pts
+- [ ] e. 1 pts
+- [ ] f. 2 pts
+- [ ] g. 2 pts
+- [ ] h. 2 pts
+- [ ] i. 1 pts
+- [ ] j. 1 pts
+- [ ] k. 1 pts

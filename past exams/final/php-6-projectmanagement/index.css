@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #444;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#contorls form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#contorls input, #contorls select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#contorls input[type="submit"] {
+    background-color: #e6f7ff;
+    border: 1px solid #0099cc;
+    color: #006699;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#contorls input[type="submit"]:hover {
+    background-color: #d9f1ff;
+}
+
+#kanban {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#kanban > div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1 1 250px;
+    min-width: 250px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+#kanban h2 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#kanban div > div {
+    background-color: #f5f5f5;
+    border-left: 4px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+
+#kanban div > div a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #006699;
+    margin-right: 5px;
+}
+
+#kanban div > div:hover {
+    background-color: #d9f1ff;
+    border-left-color: #006699;
+}
+
+#uncategorized div {
+    border-left-color: #999999;
+}
+
+#on-track div {
+    border-left-color: #009966;
+}
+
+#paused div {
+    border-left-color: #e6a700;
+}
+
+#done div {
+    border-left-color: #0066cc;
+}
+
+#cancelled div {
+    border-left-color: #cc0000;
+}
+
+#kanban div > div.selected {
+    background-color: #e6f7ff;
+    border-left-color: #0099cc;
+}

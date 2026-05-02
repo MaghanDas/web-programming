@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2.</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+    <h1>Task 2.</h1>
+    <div id="controls">
+        <div><span id="new-schedule">0</span> months</div>
+        <button id="sub-months">➖</button>
+        <button id="add-months">➕</button>
+        <button id="modify-schedule">📆</button>
+    </div>
+
+    <div id="filters">
+        Only list projects between
+        <input type="number" id="date-range-min-year" value="2026" />
+
+        <select id="date-range-min-month">
+            <option value="1">01 - January</option>
+            <option value="2">02 - February</option>
+        </select>
+
+        and
+
+        <input type="number" id="date-range-max-year" value="2035" />
+
+        <select id="date-range-max-month">
+            <option value="1">01 - January</option>
+            <option value="2">02 - February</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Project name</th>
+            </tr>
+        </thead>
+    <tbody id="project-list">
+        <tr class="dangerous-schedule">
+            <td class="schedule">2026-02</td>
+            <td>Expressway renovation</td>
+        </tr>
+        <tr class="overdue-schedule">
+            <td class="schedule">2025-11</td>
+            <td>Expressway renovation</td>
+        </tr>
+        <tr class="risky-schedule">
+            <td class="schedule">2027-07</td>
+            <td>Expressway renovation</td>
+        </tr>
+        <tr class="selected safe-schedule">
+            <td class="schedule">2035-09</td>
+            <td>Expressway renovation</td>
+        </tr>
+        <tr class="safe-schedule">
+            <td class="schedule">2035-15</td>
+            <td>Expressway renovation</td>
+        </tr>
+    </tbody>
+    </table>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

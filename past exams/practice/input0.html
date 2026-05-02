@@ -1,0 +1,23 @@
+<!-- <input type="text" id="username" placeholder="Type your name">
+<p id="greeting"></p>
+
+<script>
+const input = document.getElementById("username");
+const greeting = document.getElementById("greeting");
+
+input.addEventListener("input", () => {
+  greeting.textContent = `Hello, ${input.value}!`;
+});
+</script> -->
+
+<input type="range" id="slider" min="0" max="100">
+<span id="value">50</span>
+
+<script>
+const slider = document.getElementById("slider");
+const value = document.getElementById("value");
+
+slider.addEventListener("input", () => {
+  value.textContent = slider.value;
+});
+</script>

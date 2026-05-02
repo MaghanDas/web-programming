@@ -1,0 +1,5 @@
+- [ ] a. 4 pts
+- [ ] b. 2 pts
+- [ ] c. 2 pts
+- [ ] d. 2 pts
+- [ ] e. 1 pts

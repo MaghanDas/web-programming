@@ -1,0 +1,369 @@
+php -S localhost:8000
+taskkill /F /IM php.exe // kill existing processors using php
+🌐 1. What is $_GET?
+
+$_GET is used when data is sent in the URL.
+Example URL:
+example.com/page.php?name=John&age=22
+
+Then in PHP:
+echo $_GET['name'];  // John
+echo $_GET['age'];   // 22
+
+Key points:
+✔ Data appears in URL
+✔ Easy to test manually
+✔ Not secure for passwords
+✔ Good for filters, searching, navigation
+
+🌐 2. What is $_POST?
+$_POST receives data sent from a form (body of the request), not visible in the URL.
+
+Example form:
+<form method="POST">
+    <input type="text" name="username">
+    <input type="submit">
+</form>
+In PHP:
+echo $_POST['username'];
+Key points:
+✔ Data is NOT visible in URL
+✔ More secure
+✔ Used for login, forms, sensitive data
+✔ Can send large amounts of data
+
+🌐 3. What is $_REQUEST?
+$_REQUEST = combines GET + POST + COOKIE
+If you write:
+echo $_REQUEST['username'];
+It will search:
+POST data
+GET data
+Cookies
+
+Most developers avoid using it because:
+It’s unclear where the data comes from
+Can create bugs or security issues
+
+🌐 4. What is $_SERVER?
+$_SERVER contains information about the server and the request, such as:
+Useful values:
+$_SERVER['REMOTE_ADDR'];  // User's IP
+$_SERVER['HTTP_USER_AGENT']; // Browser info
+$_SERVER['REQUEST_METHOD'];  // GET or POST
+$_SERVER['REQUEST_URI'];  // URL path
+$_SERVER['SERVER_NAME'];  // Domain name
+$_SERVER['HTTP_HOST'];    // Host header
+Example:
+echo $_SERVER['REMOTE_ADDR'];
+This prints the visitor’s IP address.
+
+🌐 5. What is a session? ($_SESSION)
+Sessions store temporary data for each user on the server.
+Example uses:
+Login systems
+Shopping cart
+Keeping user data between pages
+Basic usage:
+session_start();
+$_SESSION['username'] = "Anna";
+
+On another page:
+session_start();
+echo $_SESSION['username']; // Anna
+
+🌐 6. What is a cookie? ($_COOKIE)
+Cookies store small data on the user's browser, not on the server.
+Example:
+setcookie("theme", "dark", time()+3600); // 1 hour
+
+Later:
+echo $_COOKIE['theme']; // dark
+
+Cookies are used for:
+Remembering preferences (theme, language)
+Tracking logins
+Analytics
+
+🌐 7. Difference between GET and POST
+Feature	GET	POST
+Data location	URL	Request body
+Visible in address bar	Yes	No
+Data size	Small	Large
+Safe for passwords	❌ No	✔ Yes
+Typical use	Search, filters, links	Forms, login, uploads
+🌐 8. What is a query string?
+
+?key=value&key2=value2
+
+Part of the URL after ?.
+Everything after it is data for the server.
+
+Example:
+
+site.com/page.php?color=red&size=large
+
+
+PHP gets it using $_GET.
+
+🌐 9. What is a form submission?
+
+An HTML form sends data to the server.
+
+Example:
+
+<form action="submit.php" method="POST">
+    <input type="text" name="email">
+    <button>Send</button>
+</form>
+
+
+Then in submit.php:
+
+echo $_POST['email'];
+
+🌐 10. What is a request method?
+
+$_SERVER['REQUEST_METHOD'] shows whether the browser used GET or POST.
+
+Example:
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "Form submitted!";
+}
+
+✔️ Summary Table
+Term	Meaning	Example
+GET	Data in URL	$_GET['id']
+POST	Data sent from form	$_POST['email']
+REQUEST	GET + POST + COOKIE	$_REQUEST['x']
+SERVER	Server & request info	$_SERVER['REMOTE_ADDR']
+SESSION	User data stored on server	$_SESSION['user']
+COOKIE	User data stored in browser	$_COOKIE['theme']
+
+
+fopen() → opens the CSV file
+fgetcsv() → reads one row as an array
+fclose() – close file
+
+// Reads Json: $data = json_decode(file_get_contents("file.json"), true);
+// write json: file_put_contents("file.json", json_encode($data, JSON_PRETTY_PRINT));
+// json structure 
+{
+  "Category": [
+    {"id":1,"name":"Item","price":10}
+  ]
+}
+Read File -> file_get_contents("file.txt");
+Write File -> file_put_contents("file.txt", $content);
+Check File Exists -> file_exists("orders.json");
+
+Redirect After Processing -> header("Location: orders.php");
+
+HTML Generation with PHP
+Table
+echo "<tr><td>$value</td></tr>";
+
+List
+<ul>
+<?php foreach ($data as $category => $products): ?>
+<li>
+<a href="products.php?category=<?= urlencode($category) ?>">
+<?= htmlspecialchars($category) ?>
+</a>
+</li>
+<?php endforeach; ?>
+
+
+HTML Table from Data
+<table>
+<tr><th>Name</th></tr>
+<?php foreach ($data as $row): ?>
+<tr><td><?= $row['name'] ?></td></tr>
+<?php endforeach; ?>
+</table>
+// inside php foreach 
+foreach ($types as $type) {
+        echo "<th>$type</th>";
+      }
+Escape Output
+htmlspecialchars($value);
+
+Encode URL
+urlencode($category);
+Required Inputs -> <input required>
+
+
+// Operation	Meaning	PHP Concept
+// Create	Add item	$array[] = $item
+// Read	Load data	json_decode()
+// Update	Modify item	array_merge()
+// Delete	Remove item	array_filter()
+
+foreach ($data as $item) {
+  if ($item['id'] == $id) return $item;
+}
+Find by Other Field
+array_filter($data, fn($i) => $i['city'] == 'London');
+Returns multiple records
+Field-based filtering
+
+Search String Contains
+str_contains($item['name'], 'li');
+. Deleting One Item by ID
+array_filter($data, fn($i) => $i['id'] != $id);
+
+Conditional Cell Styling
+$class = "";
+if ($price == $min) $class = "lowest";
+if ($price == $max) $class = "largest";
+
+<td class="<?= $class ?>"><?= $price ?></td>
+Collect Unique Values
+$types = array_unique(array_column($shop, "type"));
+$brands = array_unique(array_column($shop, "brand"));
+sort($types);
+sort($brands);
+
+Find Min / Max
+$prices = array_column($shop, "price");
+$min = min($prices);
+$max = max($prices);
+
+
+
+
+// FORM VALIDATION
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  // form was submitted
+}
+Reading Form Data
+$name  = $_POST["name"] ?? "";
+$email = $_POST["email"] ?? "";
+$age   = $_POST["age"] ?? "";
+
+Required Fields
+if (empty($name)) {
+  $errors[] = "Name is required";
+}
+
+Length Check
+if (strlen($name) < 3) {
+  $errors[] = "Name too short";
+}
+
+Numeric Validation
+if (!is_numeric($age) || $age <= 0) {
+  $errors[] = "Invalid age";
+}
+
+Email Validation
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $errors[] = "Invalid email";
+}
+trim-> removes whitespaces from beginning and ending like "   absc   " -> "absc"
+
+   $email = trim($_GET["email"] ?? "");
+    $words = preg_split('/\s+/', $fullname);
+        if (count($words) < 2) {
+            $errors[] = "Full name must contain at least two words";
+        }
+
+!in_array($colour, $allowed_colours
+!preg_match('/^\d{4}-\d{4}-\d{4}-\d{4}$/', $card)
+<span class="error"><?= $errors["fullname"] ?></span
+array_column()
+Extract single column from 2D array
+$prices = array_column($shop,"price");
+ctype_digit($var)
+Check if all characters are digits
+substr(string,start,length)	Extract substring
+explode(delimiter,string)	Split string by delimiter (simpler than preg_split)
+implode(glue,array)	Join array into string
+
+
+Displaying Errors
+<?php if (!empty($errors)): ?>
+  <ul>
+    <?php foreach ($errors as $e): ?>
+      <li><?= htmlspecialchars($e) ?></li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
+
+Checkbox Handling
+HTML
+<input type="checkbox" name="skills[]" value="PHP">
+PHP
+$skills = $_POST["skills"] ?? [];
+
+Select (Dropdown)
+<select name="city">
+  <option value="">Choose</option>
+</select>
+
+if (empty($_POST["city"])) {
+  $errors[] = "City required";
+}
+
+Radio Buttons
+<input type="radio" name="gender" value="male">
+$gender = $_POST["gender"] ?? "";
+
+require_once "storage.php";
+// create jsonIO OBJect
+$io = new JsonIO("family.json");
+// create storage object
+// JsonIO handles reading/writing the JSON file
+// Storage is a helper class that gives us add/find/update/delete methods
+$familyStorage = new Storage($io);
+
+
+<ul>
+<?php foreach ($members as $id => $member): ?>
+  <li>
+    <a href="member.php?id=<?= urlencode($id) ?>">
+      <?= htmlspecialchars($member['name'] ?? '') ?>
+    </a>
+    (0 / 0)
+  </li>
+<?php endforeach; ?>
+</ul>
+
+
+// PHP MORE NOTES
+include("./filename.php") // gives warning if  not there 
+include_once("./filename.php")
+require("./file.php") & require_once("./file.php")
+
+$userJson = json_encode($user); // converst to json 
+(!preg_match('/^\+?[0-9\s\-()]{7,20}$/', $phone)) {
+
+
+  // ABOUT JSON:
+  {
+  "name": "Alice",
+  "data": {
+    "id": 1,
+    "email": "test@example.com"
+  }
+  "colors": ["red", "green", "blue"] 
+}
+// in javascript
+// Convert object → JSON
+JSON.stringify(obj);
+// Convert JSON → object
+JSON.parse(jsonString);
+
+// in php 
+// Array/Object → JSON
+json_encode($data);
+// JSON → Array/Object
+json_decode($json, true);
+$data = json_decode(file_get_contents("products.json"), true);
+
+$orders = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
+file_put_contents($file, json_encode($orders, JSON_PRETTY_PRINT));
+
+
+
