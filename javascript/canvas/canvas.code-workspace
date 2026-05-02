@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../past exams/final/js-3-timeline"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "js-3-timeline"
+	}
+}

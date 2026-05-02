@@ -1,0 +1,36 @@
+.hidden {
+    display: none;
+}
+
+#memory {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 10px;
+}
+
+.card {
+    background: lightgray;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.card.open {
+    background: yellow;
+}
+    #menu {
+            position: absolute;
+            background: white;
+            border: 1px solid #aaa;
+            padding: 10px;
+            display: none;
+            width: 150px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        #menu div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        #menu div:hover {
+            background: #e0e0e0;
+        }
