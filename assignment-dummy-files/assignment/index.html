@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Budapest Metro — Project</title>
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <!-- MENU -->
+    <section id="menu" class="screen">
+      <header class="menu-header">
+        <h1>Budapest Metro — Build & Operate</h1>
+        <p class="subtitle">Design four metro lines and score as many points as possible.</p>
+      </header>
+
+      <div class="menu-body">
+        <label class="field">
+          <span>Player name</span>
+          <input id="playerName" type="text" placeholder="Your name" />
+        </label>
+
+        <div class="menu-actions">
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="rulesBtn" class="btn">Rules</button>
+          <button id="scoresBtn" class="btn">High scores</button>
+        </div>
+
+        <div id="scoresList" class="scores-list" aria-live="polite">
+          <!-- populated by JS -->
+        </div>
+
+        <div class="little-row">
+          <div class="hint">Tip: Click <strong>Draw Card</strong> to get a station letter, then click an endpoint and a matching station to build.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section id="rules" class="screen hidden">
+      <button id="backFromRules" class="btn back">← Back</button>
+      <h2>Game rules (short)</h2>
+      <div class="rules-text">
+        <p>Each round you build a single metro line (M1–M4). Click <strong>Draw Card</strong> to reveal a station type (A/B/C/D/Joker). Then extend your current line by one straight segment (horizontal, vertical, or 45°) from an endpoint to a station matching the card. Rounds end after 8 cards. After 4 rounds the game ends and the score is calculated.</p>
+        <ul>
+          <li>Segments may touch other lines only at stations.</li>
+          <li>Segments cannot pass through other stations or cross in open space.</li>
+          <li>Deák tér (Joker) acts as any letter.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="screen hidden">
+      <header class="game-header">
+        <div class="player-info"><strong>Player:</strong> <span id="playerDisplay">—</span></div>
+        <div class="timer"><strong>Time:</strong> <span id="timer">00:00</span></div>
+        <div class="line-info">
+          <strong>Current:</strong> <span id="currentLineName">—</span>
+          <span id="currentLineColor" class="swatch" aria-hidden="true"></span>
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="drawCardBtn" class="btn primary">Draw Card</button>
+        <div class="card-display">Card: <span id="cardDisplay">—</span></div>
+        <button id="nextRoundBtn" class="btn">Next Round</button>
+        <div class="round-stats">
+          <div>Round <span id="roundIndex">0</span>/4</div>
+          <div>Cards this round: <span id="cardsThisRound">0</span></div>
+        </div>
+      </div>
+
+      <div class="board-wrap" id="boardWrap" role="application" aria-label="Metro board">
+        <!-- SVG board (10x10 grid) -->
+        <svg id="board" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="false"></svg>
+      </div>
+
+      <footer class="game-footer">
+        <div>Last round score: <span id="lastRoundScore">0</span></div>
+        <div class="railway">Railway slider: <span id="railwaySlider">0</span></div>
+        <div class="final-score" hidden>Final score: <span id="finalScore">0</span></div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Placeholder for the JavaScript app file (we will create it next) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

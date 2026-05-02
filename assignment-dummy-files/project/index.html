@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budapest-Metro __ Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+      <!-- Main Menu -->
+<section id="menu" class="screen flex-center">
+  <div class="menu-container">
+    <h1>Budapest Metro 🚇</h1>
+    <p class="subtitle">Build & Operate</p>
+    <input type="text" id="playerName" placeholder="Enter your name" class="menu-input">
+    <div class="menu-buttons">
+      <button id="startBtn" class="btn primary">Start</button>
+      <button id="showRulesBtn" class="btn secondary">Rules</button>
+    </div>
+  </div>
+</section>
+
+<!-- Rules Screen -->
+<section id="rules" class="screen hidden flex-center">
+  <div class="rules-container">
+    <button id="backFromRules" class="btn back">← Back</button>
+    <h2>Game Rules</h2>
+    <div class="rules-text">
+      <p>Welcome to Budapest Metro — Build & Operate 🚇</p>
+      <p>This is a turn-based puzzle game where you build metro lines and score points.</p>
+      <h3>How to Play</h3>
+      <ol>
+        <li>Enter your name on the main menu and press <strong>Start</strong>.</li>
+        <li>Draw a card to reveal a station type (A, B, C, D, or Joker).</li>
+        <li>
+          Build segments by clicking start and end stations.
+        </li>
+        <li>Each round has 8 cards.</li>
+        <li>After 4 rounds, your final score is shown.</li>
+      </ol>
+      <h3>Tips</h3>
+      <ul>
+        <li>Use Jokers wisely — they mimic any station type.</li>
+        <li>Don’t make loops — each line must connect new stations.</li>
+        <li>Plan ahead to connect lines efficiently.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    <!-- GAME -->
+     
+    <section id="game" class="screen hidden">
+      <header class="game-header">
+        <div class="player-info"><strong>Player:</strong> <span id="playerDisplay">—</span></div>
+        <div class="timer"><strong>Time:</strong> <span id="timer">00:00</span></div>
+        <div class="line-info">
+          <strong>Current:</strong> <span id="currentLineName">—</span>
+          <span id="currentLineColor" class="swatch" aria-hidden="true"></span>
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="drawCardBtn" class="btn primary">Draw Card</button>
+        <div class="card-display">Card: <span id="cardDisplay">—</span></div>
+        <button id="nextRoundBtn" class="btn">Next Round</button>
+        <div class="round-stats">
+          <div>Round <span id="roundIndex">0</span>/4</div>
+          <div>Cards this round: <span id="cardsThisRound">0</span></div>
+        </div>
+      </div>
+
+      <div class="board-wrap" id="boardWrap" role="application" aria-label="Metro board">
+        <svg id="board" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet" aria-hidden="false"></svg>
+      </div>
+
+      <footer class="game-footer">
+        <div>Last round score: <span id="lastRoundScore">0</span></div>
+        <div class="railway">Railway slider: <span id="railwaySlider">0</span></div>
+        <div class="final-score" hidden>Final score: <span id="finalScore">0</span></div>
+      </footer>
+    </section> 
+    <div id="leaderboard">
+    <h3>Leaderboard</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardTableBody">
+            </tbody>
+    </table>
+</div>
+  </main>
+
+  <!-- Placeholder for the JavaScript app file (we will create it next) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
