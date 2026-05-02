@@ -1,0 +1,99 @@
+php validation
+// validate name
+$name = test_input($_POST["name"]);
+if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+  $name
+}
+
+PHP - Validate E-mail
+$email = test_input($_POST["email"]);
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $emailErr = "Invalid email format";
+}
+PHP- validate URL
+$website = test_input($_POST["website"]);
+if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+  $websiteErr = "Invalid URL";
+}
+
+PHP FILE HANDLING
+readfile() - reads a file and writes it to the output buffer
+fopen() - opens a file (gives you more options than the readfile() function)
+fread() - reads from a file
+fgets() - reads a single line from a file
+fgetc() - reads a single character from a file
+feof() - checks if the "end-of-file" (EOF) has been reached
+fwrite() - writes to a file
+fclose() - closes an open file
+unlink() - deletes a file
+
+
+<?php
+$myfile = fopen("webdictionary.txt", "r") or die("Error: Unable to open file!");
+echo fread($myfile,filesize("webdictionary.txt"));
+fclose($myfile);
+?>
+
+PHP fgets() - Read a Single Line
+Example
+<?php
+$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+echo fgets($myfile);
+fclose($myfile);
+?>
+
+<?php
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$txt = "John Doe\n";
+fwrite($myfile, $txt);
+$txt = "Jane Doe\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+?>
+
+
+
+/// important concepts here 
+// tbody.prepend(row); // inserts first row.
+// location.reload(); // page reloads
+// event.target // event Objects
+// event.type
+// event.button
+// event.clientX
+// event.clientY
+// element.hidden = true;
+// element.hidden = false;
+// Tables (VERY COMMON)
+// const tr = document.createElement("tr");
+// const td = document.createElement("td");
+// td.textContent = value;
+// tr.appendChild(td);
+// tbody.prepend(tr); // or appendChild
+// 🔹 6. CLASS & VISIBILITY CONTROL
+// element.classList.add("class")
+// element.classList.remove("class")
+// element.classList.toggle("class")
+// form.addEventListener("submit", e => {
+//   e.preventDefault();
+// });
+
+// _SESSION
+session_start();
+$_SESSION['key'] = 'value';
+Check if session data exists
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+Read session data
+$_SESSION['cart'];
+add to session 
+$_SESSION['cart'][] = 'apple';
+Modify session data
+$_SESSION['cart'][0] = 'banana';
+Remove from session
+unset($_SESSION['cart'][1]);
+
+_SESSION['fridge'] = ['butter', 'milk'];
+$recipe = ['butter', 'milk', 'flour'];
+$missing = array_diff($recipe, $_SESSION['fridge']);
+array_diff() finds ingredients not in fridge
